@@ -1,9 +1,13 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Disable server-side rendering
+  // ✅ Required for static site generation (Vercel-compatible)
+  target: 'static',
+
+  // ✅ Disable server-side rendering
   ssr: false,
 
+  // ✅ HTML head
   head: {
     titleTemplate: '%s - my-finals-pluginsss',
     title: 'my-finals-pluginsss',
@@ -17,17 +21,22 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  // ✅ Global CSS (optional)
   css: [],
 
-  // ✅ Plugins (dito mo idagdag yung plugin file)
+  // ✅ Plugins (Geolocation plugin is loaded here)
   plugins: ['~/plugins/geolocation.js'],
 
+  // ✅ Auto import components
   components: true,
 
+  // ✅ Vuetify module
   buildModules: ['@nuxtjs/vuetify'],
 
+  // ✅ Other Nuxt modules (none for now)
   modules: [],
 
+  // ✅ Vuetify theme setup
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -46,5 +55,6 @@ export default {
     }
   },
 
+  // ✅ Build config
   build: {}
 }
