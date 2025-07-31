@@ -1,24 +1,26 @@
 export default {
-  // ✅ Required for Vercel static hosting
+  // ✅ Required for static hosting (Vercel)
   target: 'static',
-  ssr: false, // SPA mode
+
+  // ✅ Optional: Disable SSR (Single Page Application mode)
+  ssr: false,
 
   head: {
-    titleTemplate: '%s - my-finals-pluginsss',
     title: 'my-finals-pluginsss',
-    htmlAttrs: { lang: 'en' },
+    htmlAttrs: {
+      lang: 'en'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
   css: [],
 
-  plugins: ['~/plugins/geolocation.js'],
+  plugins: ['~/plugins/geolocation.js'], // if you have a plugin
 
   components: true,
 
